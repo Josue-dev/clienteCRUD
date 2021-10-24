@@ -1,3 +1,9 @@
+#PROYECT DESCRIPTION
+se agregaron las configuraciones a la api de CODEIGNITER4
+se hizo peticiones de login hacia la  apii
+se mostro los datos solicitados y inserto 
+falta editar e eliminar
+
 # Cliente
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
