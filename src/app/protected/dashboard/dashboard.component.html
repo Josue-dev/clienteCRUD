@@ -1,11 +1,91 @@
 
-
-<div class="container">
-  <div class="row">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <h1  class="text-center">Dashboard</h1>
+      <h4  class="text-center">Dashboard</h4>
       <button type="button" class="btn btn-outline-primary" (click)="logout()">Logout</button>
     </div>
-    <hr>
-</div>
+      <hr>
+      <div class="container">
+        <form class="login100-form"
+          autocomplete="off"
+          [formGroup]="miForm"
+          (ngSubmit)="guardar()"
+          >
+      <input class="input100"
+             type="placa"
+             name="placa"
+             formControlName="placa"
+             placeholder="Ingrese su placa">
+      <input class="input100"
+             type="tipo"
+             name="tipo"
+             formControlName="tipo"
+             placeholder="Ingrese su tipo">
 
+      <input class="input100"
+             type="marca"
+             name="marca"
+             formControlName="marca"
+             placeholder="Ingrese su marca">
+
+      <input class="input100"
+             type="linea"
+             name="linea"
+             formControlName="linea"
+             placeholder="Ingrese su linea">
+      <input class="input100"
+             type="modelo"
+             name="modelo"
+             formControlName="modelo"
+             placeholder="Ingrese su modelo">
+
+
+             <div class="container-login100-form-btn">
+              <div class="wrap-login100-form-btn">
+                  <div class="login100-form-bgbtn"></div>
+                  <button class="login100-form-btn"
+                    type="submit"
+                    [disabled]="miForm.invalid" >
+                      Login
+                  </button>
+              </div>
+          </div>
+
+</form>
+      </div>
+      <hr>
+      <div class="container-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">PlACA</th>
+              <th scope="col">TIPO</th>
+              <th scope="col">MARCA</th>
+              <th scope="col">MODELO</th>
+              <th scope="col">LINEA</th>
+              <th scope="col">EDITAR</th>
+              <th scope="col">ELIMINAR</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let car of resultado" >
+            <tr>
+              <td>{{car.id}}</td>
+              <td>{{car.placa}}</td>
+              <td>{{car.tipo}}</td>
+              <td>{{car.marca}}</td>
+              <td>{{car.modelo}}</td>
+              <td>{{car.linea}}</td>
+              <td>
+
+                  <button type="submit" class="btn btn-primary btn-sm">Editar</button>
+              </td>
+              <td>
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+      </div>
